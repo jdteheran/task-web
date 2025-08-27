@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { useAuth } from '../../../contexts/AuthContext';
+import { useAuth } from '../../../store';
 import { InputField, Button, ErrorMessage } from '../../common';
 import { AuthLayout } from '../../layout';
 
@@ -73,7 +73,7 @@ export function Login() {
     setIsLoading(true);
     
     try {
-      await login(formData.email, formData.password);
+      await login({ email: formData.email, password: formData.password });
       // Redirigir a la ruta original o al dashboard
       navigate(from, { replace: true });
     } catch (error) {

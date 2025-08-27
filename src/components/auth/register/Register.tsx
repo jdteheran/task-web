@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../../../contexts/AuthContext';
+import { useAuth } from '../../../store';
 import { InputField, Button, ErrorMessage } from '../../common';
 import { AuthLayout } from '../../layout';
 
@@ -77,7 +77,11 @@ export function Register() {
     setIsLoading(true);
     
     try {
-      await register(formData.username, formData.email, formData.password);
+      await register({ 
+        username: formData.username, 
+        email: formData.email, 
+        password: formData.password 
+      });
       // Redirigir al dashboard después del registro exitoso
       navigate('/dashboard', { replace: true });
     } catch (error) {

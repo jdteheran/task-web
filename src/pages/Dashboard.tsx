@@ -1,4 +1,4 @@
-import { useAuth } from '../contexts/AuthContext';
+import { useAuth } from '../store';
 import { PageLayout } from '../components/layout';
 import { UserInfoCard, QuickActionCard } from '../components/dashboard';
 

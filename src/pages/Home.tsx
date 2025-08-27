@@ -1,9 +1,7 @@
-import { useAuth } from '../contexts/AuthContext';
 import { FeatureCard } from '../components/common';
 import { HeroSection, CTAButtons } from '../components/home';
 
 export function Home() {
-  const { isAuthenticated } = useAuth();
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
@@ -14,7 +12,7 @@ export function Home() {
             subtitle="y Tareas"
             description="Organiza tus proyectos, gestiona tus tareas y aumenta tu productividad con nuestra plataforma completa de gestión."
           >
-            <CTAButtons isAuthenticated={isAuthenticated} />
+            <CTAButtons />
           </HeroSection>
           
           {/* Features Section */}

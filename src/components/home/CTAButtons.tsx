@@ -1,10 +1,8 @@
 import { Link } from 'react-router-dom';
+import { useAuth } from '../../store';
 
-interface CTAButtonsProps {
-  isAuthenticated: boolean;
-}
-
-export function CTAButtons({ isAuthenticated }: CTAButtonsProps) {
+export function CTAButtons() {
+  const { isAuthenticated } = useAuth();
   if (isAuthenticated) {
     return (
       <Link

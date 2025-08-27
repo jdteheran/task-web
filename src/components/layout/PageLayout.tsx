@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAuth } from '../../contexts/AuthContext';
+import { useAuth } from '../../store';
 import { Button } from '../common';
 
 interface PageLayoutProps {
