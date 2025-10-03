@@ -6,10 +6,10 @@ export function CTAButtons() {
   if (isAuthenticated) {
     return (
       <Link
-        to="/dashboard"
+        to="/projects"
         className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors"
       >
-        Ir al Dashboard
+        Ver Proyectos
       </Link>
     );
   }

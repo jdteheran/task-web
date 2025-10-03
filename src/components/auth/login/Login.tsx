@@ -23,7 +23,7 @@ export function Login() {
   const location = useLocation();
   
   // Obtener la ruta desde donde vino el usuario
-  const from = (location.state as LocationState)?.from?.pathname || '/dashboard';
+  const from = (location.state as LocationState)?.from?.pathname || '/projects';
 
   // Manejar cambios en el formulario
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -74,7 +74,7 @@ export function Login() {
     
     try {
       await login({ email: formData.email, password: formData.password });
-      // Redirigir a la ruta original o al dashboard
+      // Redirigir a la ruta original o a proyectos
       navigate(from, { replace: true });
     } catch (error) {
       setErrors({

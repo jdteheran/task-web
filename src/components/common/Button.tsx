@@ -22,9 +22,9 @@ export function Button({
   const baseClasses = 'relative flex justify-center items-center font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 transition-colors duration-200';
   
   const variantClasses = {
-    primary: 'text-white bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 border border-transparent',
-    secondary: 'text-gray-700 bg-white hover:bg-gray-50 focus:ring-blue-500 border border-gray-300',
-    danger: 'text-white bg-red-600 hover:bg-red-700 focus:ring-red-500 border border-transparent'
+    primary: 'text-white bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 border border-transparent shadow-sm',
+    secondary: 'text-white bg-red-600 hover:bg-red-700 focus:ring-red-500 border border-transparent shadow-sm',
+    danger: 'text-white bg-red-700 hover:bg-red-800 focus:ring-red-500 border border-transparent shadow-sm'
   };
   
   const sizeClasses = {

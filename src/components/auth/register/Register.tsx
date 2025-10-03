@@ -82,8 +82,8 @@ export function Register() {
         email: formData.email, 
         password: formData.password 
       });
-      // Redirigir al dashboard después del registro exitoso
-      navigate('/dashboard', { replace: true });
+      // Redirigir a proyectos después del registro exitoso
+      navigate('/projects', { replace: true });
     } catch (error) {
       setErrors({
         general: error instanceof Error ? error.message : 'Error al registrarse',

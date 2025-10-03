@@ -5,7 +5,9 @@ import ProtectedRoute from './components/common/ProtectedRoute';
 import Home from './pages/Home';
 import Login from './components/auth/login/Login';
 import Register from './components/auth/register/Register';
-import Dashboard from './pages/Dashboard';
+import { ProjectList } from './components/projects/ProjectList';
+import { ProjectDetail } from './pages/ProjectDetail';
+import { Tasks } from './pages/Tasks';
 import './App.css';
 
 function App() {
@@ -26,13 +28,32 @@ function App() {
           
           {/* Rutas privadas */}
           <Route 
-            path="/dashboard" 
+            path="/projects" 
             element={
               <ProtectedRoute>
-                <Dashboard />
+                <ProjectList />
               </ProtectedRoute>
             } 
           />
+          <Route 
+            path="/projects/:id" 
+            element={
+              <ProtectedRoute>
+                <ProjectDetail />
+              </ProtectedRoute>
+            } 
+          />
+          <Route 
+            path="/tasks" 
+            element={
+              <ProtectedRoute>
+                <Tasks />
+              </ProtectedRoute>
+            } 
+          />
+          
+          {/* Redirigir dashboard a projects */}
+          <Route path="/dashboard" element={<Navigate to="/projects" replace />} />
           
           {/* Ruta por defecto - redirigir a home */}
           <Route path="*" element={<Navigate to="/" replace />} />
